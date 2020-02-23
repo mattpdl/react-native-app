@@ -17,26 +17,34 @@ export default function BottomTabNavigator({ navigation, route }) {
   return (
     <BottomTab.Navigator initialRouteName={INITIAL_ROUTE_NAME}>
       <BottomTab.Screen
-        name="Home"
+        name="De Neve"
         component={HomeScreen}
         options={{
-          title: 'Get Started',
+          title: 'De Neve',
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-code-working" />,
         }}
       />
       <BottomTab.Screen
-        name="Menu"
+        name="Covel"
         component={MenuScreen}
         options={{
-          title: 'Menu',
+          title: 'Covel',
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-restaurant" />,
         }}
       />
       <BottomTab.Screen
-        name="Links"
+        name="BPlate"
         component={LinksScreen}
         options={{
-          title: 'Resources',
+          title: 'BPlate',
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-book" />,
+        }}
+      />
+      <BottomTab.Screen
+        name="Feast"
+        component={LinksScreen}
+        options={{
+          title: 'Feast',
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-book" />,
         }}
       />
@@ -48,11 +56,13 @@ function getHeaderTitle(route) {
   const routeName = route.state?.routes[route.state.index]?.name ?? INITIAL_ROUTE_NAME;
 
   switch (routeName) {
-    case 'Home':
-      return 'How to get started';
-    case 'Menu':
-      return 'Menu';
-    case 'Links':
-      return 'Links to learn more';
+    case 'De Neve':
+      return 'De Neve';
+    case 'Covel':
+      return 'Covel';
+    case 'BPlate':
+      return 'BPlate';
+    case 'Feast':
+      return 'Feast'
   }
 }
