@@ -13,3 +13,7 @@ dbh.goOnline();
 export function getDatabase() {
     return dbh;
 }
+
+export function fromMenuItemToDBKey(item) {
+    return `${item.location} ${item.name.replace(/[\\!@#$%^&*()-=_+~`;:'",./<>?{}\]\[|]/g, "")}`;
+}

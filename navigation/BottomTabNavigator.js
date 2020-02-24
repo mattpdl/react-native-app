@@ -1,9 +1,7 @@
 import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import TabBarIcon from '../components/TabBarIcon';
-import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
-import MenuScreen from '../screens/MenuScreen';
+import DiningHallScreen from '../screens/DinningHallScreen';
 
 const BottomTab = createBottomTabNavigator();
 const INITIAL_ROUTE_NAME = 'Home';
@@ -18,7 +16,7 @@ export default function BottomTabNavigator({ navigation, route }) {
     <BottomTab.Navigator initialRouteName={INITIAL_ROUTE_NAME}>
       <BottomTab.Screen
         name="De Neve"
-        component={HomeScreen}
+        component={DiningHallScreen}
         options={{
           title: 'De Neve',
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-code-working" />,
@@ -26,7 +24,7 @@ export default function BottomTabNavigator({ navigation, route }) {
       />
       <BottomTab.Screen
         name="Covel"
-        component={MenuScreen}
+        component={DiningHallScreen}
         options={{
           title: 'Covel',
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-restaurant" />,
@@ -34,7 +32,7 @@ export default function BottomTabNavigator({ navigation, route }) {
       />
       <BottomTab.Screen
         name="BPlate"
-        component={LinksScreen}
+        component={DiningHallScreen}
         options={{
           title: 'BPlate',
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-book" />,
@@ -42,7 +40,7 @@ export default function BottomTabNavigator({ navigation, route }) {
       />
       <BottomTab.Screen
         name="Feast"
-        component={LinksScreen}
+        component={DiningHallScreen}
         options={{
           title: 'Feast',
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-book" />,
