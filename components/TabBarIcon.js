@@ -4,7 +4,7 @@ import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
 import Colors from '../constants/Colors';
 
 export default function TabBarIcon(props) {
-  if (props.name == "food" || props.name == "food-apple" || props.name == "rice") {
+  if (props.name == "food" || props.name == "rice") {
     return (
       <MaterialCommunityIcons
         name={props.name}

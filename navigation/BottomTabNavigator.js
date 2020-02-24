@@ -36,7 +36,7 @@ export default function BottomTabNavigator({ navigation, route }) {
         component={DiningHallScreen}
         options={{
           title: 'BPlate',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="food-apple" />,
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-leaf" />,
         }}
       />
       <BottomTab.Screen
