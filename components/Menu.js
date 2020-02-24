@@ -8,7 +8,7 @@ export function Menu({ data }) {
     return <ScrollView><SafeAreaView>
         <FlatList
             data={data}
-            renderItem={({ item }) => <MenuItem name={item.name} img="../assets/images/v.png"></MenuItem>}
+            renderItem={({ item }) => <MenuItem name={item.name} img="https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"></MenuItem>}
             keyExtractor={(s) => s.name}
             numColumns={4}
             columnWrapperStyle={style.row}
