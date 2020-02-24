@@ -7,7 +7,7 @@ export function Menu({ data }) {
     return (<SafeAreaView><ScrollView>
         <FlatList
             data={data}
-            renderItem={({ item }) => <MenuItem item={item} img="https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"></MenuItem>}
+            renderItem={({ item }) => <MenuItem item={item} img={item.imgUrl ? item.imgUrl : "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"}></MenuItem>}
             keyExtractor={(s) => s.location + s.name}
         />
     </ScrollView></SafeAreaView>);
