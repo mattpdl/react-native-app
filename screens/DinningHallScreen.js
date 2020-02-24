@@ -26,25 +26,13 @@ export default class DiningHallScreen extends React.Component {
 
     render = () => {
         if (this.props.route.name === "Covel") {
-            return (<View>
-                <View><Covel></Covel></View>
-                <Menu data={this.state.data}></Menu>
-            </View>)
+            return (<Covel><Menu data={this.state.data} /></Covel>)
         } else if (this.props.route.name === "De Neve") {
-            return (<View>
-                <View><DeNeve></DeNeve></View>
-                <Menu data={this.state.data}></Menu>
-            </View>)
+            return (<DeNeve><Menu data={this.state.data} /></DeNeve>)
         } else if (this.props.route.name === "Feast") {
-            return (<View>
-                <View><Feast></Feast></View>
-                <Menu data={this.state.data}></Menu>
-            </View>)
+            return (<Feast><Menu data={this.state.data} /></Feast>)
         } else {
-            return (<View>
-                <View><BPlate></BPlate></View>
-                <Menu data={this.state.data}></Menu>
-            </View>)
+            return (<BPlate><Menu data={this.state.data} /></BPlate>)
         }
     }
 }
