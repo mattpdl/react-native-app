@@ -16,7 +16,7 @@ export default class DiningHallScreen extends React.Component {
     updateData = (data) => {
         const json = data.toJSON();
         const a = Object.keys(json).map(key => json[key]);
-        this.setState({ data: a.filter(item => item.location === this.props.route.name) });
+        this.setState({ data: a.filter(item => item.location === this.props.route.name && item.time === "dinner") });
         this.forceUpdate();
     }
 
