@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
 export default function MenuItem(props) {
     return (
         <View style={styles.menuItem}>
-            <Image source={require(props.img)} style={styles.image}></Image>
+            <Image source={{uri: props.img}} style={styles.image}></Image>
             <View style={styles.name}>
                 <Text style={styles.text}>{props.name}</Text>
             </View>
