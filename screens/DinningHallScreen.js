@@ -17,6 +17,7 @@ export default class DiningHallScreen extends React.Component {
         const json = data.toJSON();
         const a = Object.keys(json).map(key => json[key]);
         this.setState({ data: a.filter(item => item.location === this.props.route.name) });
+        this.forceUpdate();
     }
 
     componentDidMount = () => {
