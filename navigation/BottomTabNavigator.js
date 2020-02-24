@@ -56,12 +56,12 @@ function getHeaderTitle(route) {
 
   switch (routeName) {
     case 'De Neve':
-      return 'De Neve';
+      return 'Bruin Dining+';
     case 'Covel':
-      return 'Covel';
+      return 'Bruin Dining+';
     case 'BPlate':
-      return 'BPlate';
+      return 'Bruin Dining+';
     case 'Feast':
-      return 'Feast'
+      return 'Bruin Dining+'
   }
 }
