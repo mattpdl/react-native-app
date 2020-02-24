@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
     text: {
         textAlign: "left",
         fontSize: 16,
+        fontWeight:"bold"
     }
 });
 
