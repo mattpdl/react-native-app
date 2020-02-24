@@ -35,12 +35,17 @@ export default class MenuItem extends React.Component {
             this.props.item.numRatings++;
             this.props.item.rating = ((this.props.item.numRatings - 1) * this.props.item.rating + x) / this.props.item.numRatings;
             this.setState({ rating: x, rated: true });
-        } else if (this.state.rating === x && !this.state.rated) {
-            this.props.item.rating = (this.props.item.numRatings * this.props.item.rating - x) / (this.props.numRatings - 1);
+        } else if (this.state.rating === x && this.state.rated) {
+            if (this.props.item.numRatings !== 1) {
+                this.props.item.rating = (this.props.item.numRatings * this.props.item.rating - x) / (this.props.item.numRatings - 1);
+            } else {
+                this.props.item.rating = 0;
+            }
             this.props.item.numRatings--;
             x = 0;
-            this.setState({ rating: x, rated: false });
+            this.setState({ rating: 0, rated: false });
         } else {
+            this.props.item.numRatings++;
             this.props.item.rating = (this.props.item.numRatings * this.props.item.rating - this.state.rating + x) / this.props.item.numRatings;
             this.setState({ rating: x, rated: true });
         }
