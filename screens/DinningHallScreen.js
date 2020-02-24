@@ -1,6 +1,11 @@
 import * as React from 'react';
 import { Menu } from "../components/Menu";
 import { getDatabase } from "../model/data";
+import { View } from 'react-native';
+import Covel from './Covel';
+import DeNeve from './DeNeve';
+import BPlate from './BPlate';
+import Feast from './Feast';
 
 export default class DiningHallScreen extends React.Component {
     constructor(props) {
@@ -15,12 +20,30 @@ export default class DiningHallScreen extends React.Component {
     }
 
     componentDidMount = () => {
-        getDatabase().ref("/menus").once("value", this.updateData);
+        getDatabase().ref("/menus").on("value", this.updateData);
     }
 
     render = () => {
-        return (
-            <Menu data={this.state.data}></Menu>
-        );
+        if (this.props.route.name === "Covel") {
+            return (<View>
+                <Covel></Covel>
+                <Menu data={this.state.data}></Menu>
+            </View>)
+        } else if (this.props.route.name === "De Neve") {
+            return (<View>
+                <DeNeve></DeNeve>
+                <Menu data={this.state.data}></Menu>
+            </View>)
+        }else if (this.props.route.name === "Feast") {
+            return (<View>
+                <Feast></Feast>
+                <Menu data={this.state.data}></Menu>
+            </View>)
+        } else {
+            return (<View>
+                <BPlate></BPlate>
+                <Menu data={this.state.data}></Menu>
+            </View>)
+        }
     }
 }
