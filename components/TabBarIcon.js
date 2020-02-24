@@ -4,23 +4,23 @@ import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
 import Colors from '../constants/Colors';
 
 export default function TabBarIcon(props) {
-  if (props.name == "food" || props.name == "rice") {
+  if (props.name.substr(0,3) == "md-") {
     return (
-      <MaterialCommunityIcons
+      <Ionicons
         name={props.name}
         size={30}
         style={{ marginBottom: -3 }}
         color={props.focused ? Colors.tabIconSelected : Colors.tabIconDefault}
       />
-    )
+    );
   }
 
   return (
-    <Ionicons
-      name={props.name}
-      size={30}
-      style={{ marginBottom: -3 }}
-      color={props.focused ? Colors.tabIconSelected : Colors.tabIconDefault}
+    <MaterialCommunityIcons
+        name={props.name}
+        size={30}
+        style={{ marginBottom: -3 }}
+        color={props.focused ? Colors.tabIconSelected : Colors.tabIconDefault}
     />
   );
 }
